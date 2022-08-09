@@ -23,14 +23,13 @@ function Map() {
     console.log(x);
     setRadius(parseInt(x));
   }
-  const [map, setMap] = React.useState(null)
 
   const onLoad = React.useCallback(function callback(map) {
 
     const bounds = new window.google.maps.LatLngBounds({lat,lng});
     map.fitBounds(bounds);
     setMap(map)
-  }, [])
+  })
 
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null)
